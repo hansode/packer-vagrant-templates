@@ -45,7 +45,7 @@ set -x
   if [[ -f ${iso_path} ]]; then
     mount -o loop ${iso_path} ${mnt_path}
 
-    ${mnt_path}/VBoxLinuxAdditions.run --nox11
+    ${mnt_path}/VBoxLinuxAdditions.run --nox11 || :
 
     umount ${mnt_path}
     rm ${iso_path}
