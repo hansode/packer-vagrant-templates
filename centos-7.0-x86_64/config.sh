@@ -4,7 +4,6 @@
 #  bash
 #
 set -e
-exit 0
 
 {
   user_name=vagrant
