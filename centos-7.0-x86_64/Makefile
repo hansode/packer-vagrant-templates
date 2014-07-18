@@ -3,4 +3,4 @@ SHELL=/bin/bash
 all:
 
 build:
-	packer build packer.json
+	time packer build packer.json
