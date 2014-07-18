@@ -4,6 +4,7 @@
 #  bash
 #
 set -e
+set -x
 
 {
   user_name=vagrant
