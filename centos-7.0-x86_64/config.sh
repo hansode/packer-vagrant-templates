@@ -38,9 +38,15 @@ set -e
 }
 
 {
-  if [[ -f /home/vagrant/VBoxGuestAdditions.iso ]]; then
-    mount -o loop /home/vagrant/VBoxGuestAdditions.iso /mnt
-    /mnt/VBoxLinuxAdditions.run --nox11
-    umount /mnt
+  iso_path=/home/vagrant/VBoxGuestAdditions.iso
+  mnt_path=/mnt
+
+  if [[ -f ${iso_path} ]]; then
+    mount -o loop ${iso_path} ${mnt_path}
+
+    ${mnt_path}/VBoxLinuxAdditions.run --nox11
+
+    umount ${mnt_path}
+    rm ${iso_path}
   fi
 }
