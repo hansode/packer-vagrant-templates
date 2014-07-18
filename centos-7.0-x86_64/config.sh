@@ -48,6 +48,7 @@ function yum() {
   mnt_path=/mnt
 
   mount -o loop ${iso_path} ${mnt_path}
+  yum install --disablerepo=updates -y make kernel-devel gcc perl bzip2
 
   ${mnt_path}/VBoxLinuxAdditions.run --nox11 || :
 
