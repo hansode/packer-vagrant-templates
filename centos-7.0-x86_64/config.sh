@@ -47,12 +47,10 @@ function yum() {
   iso_path=/home/vagrant/VBoxGuestAdditions.iso
   mnt_path=/mnt
 
-  if [[ -f ${iso_path} ]]; then
-    mount -o loop ${iso_path} ${mnt_path}
+  mount -o loop ${iso_path} ${mnt_path}
 
-    ${mnt_path}/VBoxLinuxAdditions.run --nox11 || :
+  ${mnt_path}/VBoxLinuxAdditions.run --nox11 || :
 
-    umount ${mnt_path}
-    rm ${iso_path}
-  fi
+  umount ${mnt_path}
+  rm ${iso_path}
 }
