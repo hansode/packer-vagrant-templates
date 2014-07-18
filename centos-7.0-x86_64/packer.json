@@ -33,7 +33,7 @@
     {
       "type": "vagrant",
       "compression_level": 9,
-      "output": "centos-7.0-x86_64.virtualbox.box"
+      "output": "centos-7.0.1406-x86_64.virtualbox.box"
     }
   ]
 }
