@@ -7,6 +7,10 @@ set -e
 set -o pipefail
 set -x
 
+function yum() {
+  $(type -P yum) --disablerepo=updates "${@}"
+}
+
 {
   user_name=vagrant
   user_group=${user_name}
