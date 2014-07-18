@@ -36,3 +36,11 @@ set -e
   sed -i "s/^\(^Defaults\s*requiretty\).*/# \1/" /etc/sudoers
   egrep ^${user_name} -w /etc/sudoers || { echo "${user_name} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers; }
 }
+
+{
+  if [[ -f /home/vagrant/VBoxGuestAdditions.iso ]]; then
+    mount -o loop /home/vagrant/VBoxGuestAdditions.iso /mnt
+    /mnt/VBoxLinuxAdditions.run --nox11
+    umount /mnt
+  fi
+}
