@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # requires:
 #  bash
@@ -6,6 +6,8 @@
 set -e
 set -o pipefail
 set -x
+
+#> bootstrap.sh
 
 function yum() {
   $(type -P yum) --disablerepo=updates "${@}"
@@ -25,6 +27,8 @@ addpkgs="
 if [[ -n "$(echo ${addpkgs})" ]]; then
   yum install -y ${addpkgs}
 fi
+
+#> sshd_config.sh
 
 function config_sshd_config() {
   local sshd_config_path=$1 keyword=$2 value=$3
@@ -95,6 +99,8 @@ function config_sshd_config() {
         )
 }
 
+#> vagrant.guest.account.sh
+
 {
   user_name=vagrant
   user_group=${user_name}
@@ -126,6 +132,8 @@ function config_sshd_config() {
   sed -i "s/^\(^Defaults\s*requiretty\).*/# \1/" /etc/sudoers
   egrep ^${user_name} -w /etc/sudoers || { echo "${user_name} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers; }
 }
+
+#> virtualbox.guest.additions.sh
 
 {
   iso_path=/home/vagrant/VBoxGuestAdditions.iso
