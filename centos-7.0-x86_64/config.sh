@@ -85,8 +85,8 @@ function config_sshd_config() {
 	# 09: Change SSH Port and Limit IP Binding
 	Port 22
 
-        # 11: Use Public Key Based Authentication
-        PasswordAuthentication no
+	# 11: Use Public Key Based Authentication
+	PasswordAuthentication no
 
 	# 15: Disable Empty Passwords
 	PermitEmptyPasswords no
@@ -96,7 +96,7 @@ function config_sshd_config() {
 	X11Forwarding no
 	UseDNS        no
 	EOS
-        )
+	)
 }
 
 #> vagrant.guest.account.sh
