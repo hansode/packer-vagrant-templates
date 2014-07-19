@@ -10,5 +10,5 @@ build:
 add:
 	time vagrant box add $(NAME) $(NAME).$(PROVIDER).box
 
-clean:
+remove:
 	time vagrant box remove $(NAME) --provider $(PROVIDER)
