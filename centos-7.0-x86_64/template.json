@@ -68,10 +68,10 @@
     {
       "type": "vagrant",
       "override": {
-        "virtualbox-iso": {
+        "virtualbox": {
           "output": "centos-7.0.1406-x86_64.virtualbox.box"
         },
-        "vmware-iso": {
+        "vmware": {
           "output": "centos-7.0.1406-x86_64.vmware.box"
         }
       }
