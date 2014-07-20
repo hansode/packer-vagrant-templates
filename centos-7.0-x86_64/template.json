@@ -14,7 +14,7 @@
       "guest_os_type": "RedHat_64",
       "vboxmanage": [
         [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
-        [ "modifyvm", "{{.Name}}", "--cpus",   "2"    ]
+        [ "modifyvm", "{{.Name}}", "--cpus",   "1"    ]
       ],
       "ssh_password": "vagrant",
       "ssh_username": "vagrant",
@@ -35,7 +35,7 @@
       "guest_os_type": "rhel7-64",
       "vmx_data": {
         "memsize": "1024",
-        "numvcpus": "2"
+        "numvcpus": "1"
       },
       "vmdk_name": "box-disk1",
       "ssh_password": "vagrant",
