@@ -35,7 +35,8 @@
       "guest_os_type": "rhel7-64",
       "vmx_data": {
         "memsize": "1024",
-        "numvcpus":   "1"
+        "numvcpus":   "1",
+        "vhv.enable": "TRUE"
       },
       "vmdk_name": "box-disk1",
       "disk_type_id": "0",
