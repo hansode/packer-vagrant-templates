@@ -14,7 +14,7 @@
       "guest_os_type": "RedHat_64",
       "vboxmanage": [
         [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
-        [ "modifyvm", "{{.Name}}", "--cpus",   "1 "   ]
+        [ "modifyvm", "{{.Name}}", "--cpus",   "1"    ]
       ],
       "ssh_password": "vagrant",
       "ssh_username": "vagrant",
