@@ -2,3 +2,4 @@ packer_cache/
 output-virtualbox-iso/
 *.swp
 *.box
+*.vmdk
