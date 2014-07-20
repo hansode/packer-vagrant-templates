@@ -28,7 +28,7 @@
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "override": {
         "virtualbox-iso": {
-          "scripts": [ "config.sh" ]
+          "scripts": [ "scripts/config.sh" ]
         }
       }
     }
