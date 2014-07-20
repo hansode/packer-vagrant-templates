@@ -25,15 +25,23 @@
   "provisioners": [
     {
       "type": "shell",
-      "scripts": [ "config.sh" ],
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'"
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "override": {
+        "virtualbox-iso": {
+          "scripts": [ "config.sh" ]
+        }
+      }
     }
   ],
   "post-processors": [
     {
       "type": "vagrant",
       "compression_level": 9,
-      "output": "centos-7.0.1406-x86_64.virtualbox.box"
+      "override": {
+        "virtualbox-iso": {
+          "output": "centos-7.0.1406-x86_64.virtualbox.box"
+        }
+      }
     }
   ]
 }
