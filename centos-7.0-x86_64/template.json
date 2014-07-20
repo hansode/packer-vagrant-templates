@@ -37,6 +37,7 @@
         "memsize": "1024",
         "numvcpus": "2"
       },
+      "vmdk_name": "box-disk1",
       "ssh_password": "vagrant",
       "ssh_username": "vagrant",
       "ssh_wait_timeout": "50000s",
