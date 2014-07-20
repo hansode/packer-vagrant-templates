@@ -5,7 +5,7 @@ PROVIDER=virtualbox
 all:
 
 build:
-	time packer build template.json
+	time packer build -only=$(PROVIDER)-iso template.json
 
 add:
 	time vagrant box add $(NAME) $(NAME).$(PROVIDER).box
