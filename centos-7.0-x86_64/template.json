@@ -38,6 +38,7 @@
         "numvcpus":   "1",
         "vhv.enable": "TRUE"
       },
+      "tools_upload_flavor": "linux",
       "vmdk_name": "box-disk1",
       "disk_type_id": "0",
       "ssh_password": "vagrant",
@@ -63,7 +64,8 @@
           "scripts": [
             "scripts/bootstrap.sh",
             "scripts/sshd_config.sh",
-            "scripts/vagrant.guest.account.sh"
+            "scripts/vagrant.guest.account.sh",
+            "scripts/vmware-tools.sh"
           ]
         }
       }
