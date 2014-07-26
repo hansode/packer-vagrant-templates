@@ -23,6 +23,4 @@ set -x
 
   /tmp/vmware-tools-distrib/vmware-install.pl -d
   rm -r /tmp/vmware-tools-distrib
-
-  yum remove --disablerepo=updates -y perl net-tools
 }
