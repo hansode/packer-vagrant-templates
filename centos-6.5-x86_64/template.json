@@ -54,18 +54,22 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
+            "scripts/setup.sh",
             "scripts/bootstrap.sh",
             "scripts/sshd_config.sh",
             "scripts/vagrant.guest.account.sh",
-            "scripts/virtualbox.guest.additions.sh"
+            "scripts/virtualbox.guest.additions.sh",
+            "scripts/teardown.sh"
           ]
         },
         "vmware-iso": {
           "scripts": [
+            "scripts/setup.sh",
             "scripts/bootstrap.sh",
             "scripts/sshd_config.sh",
             "scripts/vagrant.guest.account.sh",
-            "scripts/vmware-tools.sh"
+            "scripts/vmware-tools.sh",
+            "scripts/teardown.sh"
           ]
         }
       }
