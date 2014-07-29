@@ -30,8 +30,8 @@ set -x
     sleep 1
   done
 
-  echo         root:${user_name} | chpasswd
-  echo ${user_name}:${user_name} | chpasswd
+  echo         root:${user_name} | /usr/sbin/chpasswd
+  echo ${user_name}:${user_name} | /usr/sbin/chpasswd
 
   chown -R ${user_group}:${user_name} ${user_ssh_dir}
 
