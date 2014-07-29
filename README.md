@@ -1,10 +1,58 @@
-Packer Skeletons
-================
+Packer Vagrant Templates
+========================
 
 System Requirements
 -------------------
 
 + [Packer](http://www.packer.io/)
+
+Installation
+------------
+
+```
+$ git clone https://github.com/hansode/packer-vagrant-templates.git
+```
+
+Getting Started
+---------------
+
+```
+$ cd <project>
+$ make build
+```
+
+Folder Structure
+----------------
+
+```
+project/
+|  +- Makefile
+|  +- ks.cfg        # minimal base box build scenario
+|  +- template.json # packer template
+|  +- scripts       # symbolic link of ../scripts
+|
++- scripts/
+   +- setup.sh
+   +--- bootstrap.sh
+   +--- sshd_config.sh
+   +--- vagrant.guest.account.sh
+   +- teardown.sh
+```
+
+Vagrant Base Box Build Workflow
+-------------------------------
+
+```
+$ make build
+```
+
+```
+$ make add
+```
+
+```
+$ make remove
+```
 
 License
 -------
