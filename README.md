@@ -26,17 +26,19 @@ Folder Structure
 
 ```
 project/
-|  +- Makefile
+|  +- Makefile      # symbolic link of ../common/Makefile
 |  +- ks.cfg        # minimal base box build scenario
 |  +- template.json # packer template
-|  +- scripts       # symbolic link of ../scripts
+|  +- scripts       # symbolic link of ../common/scripts
 |
-+- scripts/
-   +- setup.sh
-   +--- bootstrap.sh
-   +--- sshd_config.sh
-   +--- vagrant.guest.account.sh
-   +- teardown.sh
++- common/
+   +- Makefile
+   +- scripts/
+      +- setup.sh
+      +--- bootstrap.sh
+      +--- sshd_config.sh
+      +--- vagrant.guest.account.sh
+      +- teardown.sh
 ```
 
 Vagrant Base Box Build Workflow
