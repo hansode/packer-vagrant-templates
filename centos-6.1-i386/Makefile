@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-NAME=centos-6.1-i386
+NAME=`basename \`pwd\``
 PROVIDER=virtualbox
 
 all:
