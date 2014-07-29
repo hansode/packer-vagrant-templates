@@ -5,7 +5,7 @@
       "vm_name": "box",
       "iso_checksum_type": "md5",
       "iso_checksum": "690138908de516b6e5d7d180d085c3f3",
-      "iso_url": "http://centos.data-hotel.net/pub/linux/centos/6.3/isos/x86_64/CentOS-6.3-x86_64-netinstall.iso",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/6.3/isos/x86_64/CentOS-6.3-x86_64-netinstall.iso",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
@@ -26,7 +26,7 @@
       "vm_name": "box",
       "iso_checksum_type": "md5",
       "iso_checksum": "690138908de516b6e5d7d180d085c3f3",
-      "iso_url": "http://centos.data-hotel.net/pub/linux/centos/6.3/isos/x86_64/CentOS-6.3-x86_64-netinstall.iso",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/6.3/isos/x86_64/CentOS-6.3-x86_64-netinstall.iso",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
