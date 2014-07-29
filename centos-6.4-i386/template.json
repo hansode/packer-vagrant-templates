@@ -11,7 +11,7 @@
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
       ],
       "headless": "false",
-      "guest_os_type": "RedHat_64",
+      "guest_os_type": "RedHat",
       "vboxmanage": [
         [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
         [ "modifyvm", "{{.Name}}", "--cpus",   "1"    ]
