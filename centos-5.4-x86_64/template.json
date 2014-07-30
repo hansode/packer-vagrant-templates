@@ -1,0 +1,91 @@
+{
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "vm_name": "box",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "d384b843f73c56802c43025fb48a732b",
+      "iso_url": "http://mirror.nsc.liu.se/centos-store/5.4/isos/x86_64/CentOS-5.4-x86_64-netinstall.iso",
+      "http_directory": ".",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
+      ],
+      "headless": "false",
+      "guest_os_type": "RedHat_64",
+      "vboxmanage": [
+        [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
+        [ "modifyvm", "{{.Name}}", "--cpus",   "1"    ]
+      ],
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "50000s",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p"
+    },
+    {
+      "type": "vmware-iso",
+      "vm_name": "box",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "d384b843f73c56802c43025fb48a732b",
+      "iso_url": "http://mirror.nsc.liu.se/centos-store/5.4/isos/x86_64/CentOS-5.4-x86_64-netinstall.iso",
+      "http_directory": ".",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
+      ],
+      "headless": "false",
+      "guest_os_type": "rhel6-64",
+      "vmx_data": {
+        "memsize": "1024",
+        "numvcpus":   "1",
+        "vhv.enable": "TRUE"
+      },
+      "tools_upload_flavor": "linux",
+      "vmdk_name": "box-disk1",
+      "disk_type_id": "0",
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "50000s",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "override": {
+        "virtualbox-iso": {
+          "scripts": [
+            "scripts/setup.sh",
+            "scripts/bootstrap.sh",
+            "scripts/sshd_config.sh",
+            "scripts/vagrant.guest.account.sh",
+            "scripts/virtualbox.guest.additions.sh",
+            "scripts/teardown.sh"
+          ]
+        },
+        "vmware-iso": {
+          "scripts": [
+            "scripts/setup.sh",
+            "scripts/bootstrap.sh",
+            "scripts/sshd_config.sh",
+            "scripts/vagrant.guest.account.sh",
+            "scripts/vmware-tools.sh",
+            "scripts/teardown.sh"
+          ]
+        }
+      }
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "override": {
+        "virtualbox": {
+          "output": "centos-5.4-x86_64.virtualbox.box"
+        },
+        "vmware": {
+          "output": "centos-5.4-x86_64.vmware.box"
+        }
+      }
+    }
+  ]
+}
