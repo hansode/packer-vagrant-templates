@@ -32,7 +32,7 @@
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
       ],
       "headless": "false",
-      "guest_os_type": "rhel6-64",
+      "guest_os_type": "rhel5-64",
       "vmx_data": {
         "memsize": "1024",
         "numvcpus":   "1",
