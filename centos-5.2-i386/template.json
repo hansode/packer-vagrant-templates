@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "virtualbox-iso",
-      "vm_name": "box",
+      "vm_name": "_centos-5.2-i386",
       "iso_checksum_type": "md5",
       "iso_checksum": "bf39f9b8262ebac876267b46e35bf2dd",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.2/isos/i386/CentOS-5.2-i386-netinstall.iso",
@@ -23,7 +23,7 @@
     },
     {
       "type": "vmware-iso",
-      "vm_name": "box",
+      "vm_name": "_centos-5.2-i386",
       "iso_checksum_type": "md5",
       "iso_checksum": "bf39f9b8262ebac876267b46e35bf2dd",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.2/isos/i386/CentOS-5.2-i386-netinstall.iso",
