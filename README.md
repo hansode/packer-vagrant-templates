@@ -49,11 +49,7 @@ $ make build
 ```
 
 ```
-$ make add
-```
-
-```
-$ make remove
+$ make test
 ```
 
 License

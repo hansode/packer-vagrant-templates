@@ -3,3 +3,4 @@ output-virtualbox-iso/
 *.swp
 *.box
 *.vmdk
+.vagrant/
