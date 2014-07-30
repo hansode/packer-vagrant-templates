@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "virtualbox-iso",
-      "vm_name": "box",
+      "vm_name": "_centos-6.5-x86_64",
       "iso_checksum_type": "md5",
       "iso_checksum": "939fd1d87c11ffe7795324438b85adfb",
       "iso_url": "http://ftp.riken.jp/Linux/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-netinstall.iso",
@@ -23,7 +23,7 @@
     },
     {
       "type": "vmware-iso",
-      "vm_name": "box",
+      "vm_name": "_centos-6.5-x86_64",
       "iso_checksum_type": "md5",
       "iso_checksum": "939fd1d87c11ffe7795324438b85adfb",
       "iso_url": "http://ftp.riken.jp/Linux/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-netinstall.iso",

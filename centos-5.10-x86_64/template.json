@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "virtualbox-iso",
-      "vm_name": "box",
+      "vm_name": "_centos-5.10-x86_64",
       "iso_checksum_type": "md5",
       "iso_checksum": "e09e44f04f0a4b97b04935e0ba88833f",
       "iso_url": "http://ftp.riken.jp/Linux/centos/5.10/isos/x86_64/CentOS-5.10-x86_64-netinstall.iso",
@@ -23,7 +23,7 @@
     },
     {
       "type": "vmware-iso",
-      "vm_name": "box",
+      "vm_name": "_centos-5.10-x86_64",
       "iso_checksum_type": "md5",
       "iso_checksum": "e09e44f04f0a4b97b04935e0ba88833f",
       "iso_url": "http://ftp.riken.jp/Linux/centos/5.10/isos/x86_64/CentOS-5.10-x86_64-netinstall.iso",

@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "virtualbox-iso",
-      "vm_name": "box",
+      "vm_name": "_centos-5.8-i386",
       "iso_checksum_type": "md5",
       "iso_checksum": "3812865e426b55fde9a9931990e4a16c",
       "iso_url": "http://ftp.riken.jp/Linux/centos/5.8/isos/i386/CentOS-5.8-i386-netinstall.iso",
@@ -23,7 +23,7 @@
     },
     {
       "type": "vmware-iso",
-      "vm_name": "box",
+      "vm_name": "_centos-5.8-i386",
       "iso_checksum_type": "md5",
       "iso_checksum": "3812865e426b55fde9a9931990e4a16c",
       "iso_url": "http://ftp.riken.jp/Linux/centos/5.8/isos/i386/CentOS-5.8-i386-netinstall.iso",

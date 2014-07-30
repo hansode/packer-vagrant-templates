@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "virtualbox-iso",
-      "vm_name": "box",
+      "vm_name": "_centos-5.4-x86_64",
       "iso_checksum_type": "md5",
       "iso_checksum": "d384b843f73c56802c43025fb48a732b",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.4/isos/x86_64/CentOS-5.4-x86_64-netinstall.iso",
@@ -23,7 +23,7 @@
     },
     {
       "type": "vmware-iso",
-      "vm_name": "box",
+      "vm_name": "_centos-5.4-x86_64",
       "iso_checksum_type": "md5",
       "iso_checksum": "d384b843f73c56802c43025fb48a732b",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.4/isos/x86_64/CentOS-5.4-x86_64-netinstall.iso",
