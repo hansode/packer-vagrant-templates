@@ -4,7 +4,7 @@
       "type": "virtualbox-iso",
       "vm_name": "box",
       "iso_checksum_type": "md5",
-      "iso_checksum": "0172883a3039772165db073693debae5",
+      "iso_checksum": "34c9ccca520e7c049768b672c05644a4",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.4/isos/i386/CentOS-5.4-i386-netinstall.iso",
       "http_directory": ".",
       "boot_command": [
@@ -25,7 +25,7 @@
       "type": "vmware-iso",
       "vm_name": "box",
       "iso_checksum_type": "md5",
-      "iso_checksum": "0172883a3039772165db073693debae5",
+      "iso_checksum": "34c9ccca520e7c049768b672c05644a4",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.4/isos/i386/CentOS-5.4-i386-netinstall.iso",
       "http_directory": ".",
       "boot_command": [
