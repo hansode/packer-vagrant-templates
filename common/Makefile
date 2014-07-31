@@ -4,12 +4,18 @@ PROVIDER=virtualbox
 
 all:
 
-build:
+build: build-stamp
+build-stamp:
 	time packer build -only=$(PROVIDER)-iso template.json
+	touch $@
 
-test: add up ssh-test clean
+test: test-stamp
+test-stamp: add up ssh-test remove destroy
+	touch $@
 
-clean: remove destroy
+clean:
+	rm -f build-stamp
+	rm -f test-stamp
 
 add:
 	time vagrant box add $(NAME) $(NAME).$(PROVIDER).box
@@ -25,3 +31,5 @@ destroy:
 
 ssh-test:
 	time vagrant ssh -c hostname
+
+.PHONY: build test clean add remove up destroy ssh-test
