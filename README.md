@@ -29,7 +29,6 @@ project/
 |  +- Makefile      # symbolic link of ../common/Makefile
 |  +- ks.cfg        # minimal base box build scenario
 |  +- template.json # packer template
-|  +- scripts       # symbolic link of ../common/scripts
 |
 +- common/
    +- Makefile
