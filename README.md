@@ -29,9 +29,11 @@ project/
 |  +- Makefile      # symbolic link of ../common/Makefile
 |  +- ks.cfg        # minimal base box build scenario
 |  +- template.json # packer template
+|  +- Vagrantfile
 |
 +- common/
    +- Makefile
+   +- Vagrantfile
    +- scripts/
       +- setup.sh
       +--- bootstrap.sh
