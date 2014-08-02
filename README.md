@@ -1,35 +1,66 @@
 Packer Vagrant Templates
 ========================
 
-System Requirements
--------------------
+This repository contains templates for CentOS that can create Vagrant base boxes using Packer.
 
-+ [Packer](http://www.packer.io/)
+Current Boxes
+-------------
 
-Installation
+64-bit boxes:
+
++ [hansode/centos-7.0.1406-x86_64](https://vagrantcloud.com/hansode/centos-7.0.1406-x86_64)
+
+32-bit boxes:
+
++ ...
+
+Requirements
 ------------
 
+* Packer (>= 0.6.0)(http://www.packer.io/downloads.html)
+* Vagrant (>= 1.6.3)(http://downloads.vagrantup.com/)
+* Platforms
+  * Virtualbox (>= 4.3.14)(https://www.virtualbox.org/wiki/Downloads)
+  * VMware Workstaion (>= 10)(https://www.vmware.com/go/downloadworkstation)
+* Vagrant VMware plugin if you're using vmware (http://www.vagrantup.com/vmware)
+
+Build Vagrant Base Box
+----------------------
+
+A GNU Make `Makefile` drives the process via the following targets:
+
 ```
-$ git clone https://github.com/hansode/packer-vagrant-templates.git
+$ make build # Build the box
+$ make test  # Run tests
+$ make clean # Clean up stamp files
 ```
 
-Getting Started
----------------
+### Makefile variable(s)
+
+The variable(s) can be currently used are:
+
++ PROVIDER
+
+Possible values for the PROVIDER are:
+
++ virtualbox (default)
++ vmware
+
+If you build the vagrant base box for vmware, the value of `PROVIDER` should be `vmware`. For example with vmware:
 
 ```
-$ cd <project>
-$ make build
+$ make build PROVIDER=vmware
+$ make test  PROVIDER=vmware
 ```
 
-Folder Structure
-----------------
+### Folder Structure
 
 ```
 project/
-|  +- Makefile      # symbolic link of ../common/Makefile
-|  +- ks.cfg        # minimal base box build scenario
-|  +- template.json # packer template
-|  +- Vagrantfile   # copy of ../templates/Vagrantfile
+|  +- Makefile      # Symbolic link of ../common/Makefile
+|  +- ks.cfg        # Minimal base box build scenario
+|  +- template.json # Packer template
+|  +- Vagrantfile   # Copy of ../templates/Vagrantfile
 |
 +- common/
 |  +- Makefile
@@ -38,25 +69,27 @@ project/
 |     +--- bootstrap.sh
 |     +--- sshd_config.sh
 |     +--- vagrant.guest.account.sh
+|     +--- virtualbox.guest.additions.sh
+|     +--- vmware-tools.sh
 |     +- teardown.sh
 |
 +- templates/
    +- Vagrantfile
-   +- ks.5.cfg
-   +- ks.6.cfg
-   +- ks.7.cfg
+   +- ks.5.cfg # Kickstart config for CentOS-5.x
+   +- ks.6.cfg # Kickstart config for CentOS-6.x
+   +- ks.7.cfg # Kickstart config for CentOS-7.x
 ```
 
-Vagrant Base Box Build Workflow
--------------------------------
+Contribution
+------------
 
-```
-$ make build
-```
-
-```
-$ make test
-```
+1. Fork ([https://github.com/hansode/packer-vagrant-templates](https://github.com/hansode/packer-vagrant-templates)).
+2. Create a feature branch.
+3. Commit your changes.
+4. Fix stuff.  Use `make build` in a relevant directory (like `cd centos-6.5-x86_64`).
+5. Run `make test` in a relevant directory (like `cd centos-6.5-x86_64`) to see if the tests pass.  Repeat steps 3-5 until done.
+6. Update `README.md` and `AUTHORS` to reflect any changes.
+7. Push to your fork and submit a pull request.
 
 License
 -------
