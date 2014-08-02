@@ -29,17 +29,22 @@ project/
 |  +- Makefile      # symbolic link of ../common/Makefile
 |  +- ks.cfg        # minimal base box build scenario
 |  +- template.json # packer template
-|  +- Vagrantfile
+|  +- Vagrantfile   # copy of ../templates/Vagrantfile
 |
 +- common/
-   +- Makefile
+|  +- Makefile
+|  +- scripts/
+|     +- setup.sh
+|     +--- bootstrap.sh
+|     +--- sshd_config.sh
+|     +--- vagrant.guest.account.sh
+|     +- teardown.sh
+|
++- templates/
    +- Vagrantfile
-   +- scripts/
-      +- setup.sh
-      +--- bootstrap.sh
-      +--- sshd_config.sh
-      +--- vagrant.guest.account.sh
-      +- teardown.sh
+   +- ks.5.cfg
+   +- ks.6.cfg
+   +- ks.7.cfg
 ```
 
 Vagrant Base Box Build Workflow
