@@ -1,11 +1,15 @@
 {
+  "variables": {
+      "iso_checksum": "6425035e9adee4b8653a85f59877ac5b",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/5.8/isos/x86_64/CentOS-5.8-x86_64-netinstall.iso"
+  },
   "builders": [
     {
       "type": "virtualbox-iso",
       "vm_name": "_centos-5.8-x86_64",
       "iso_checksum_type": "md5",
-      "iso_checksum": "6425035e9adee4b8653a85f59877ac5b",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/5.8/isos/x86_64/CentOS-5.8-x86_64-netinstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
@@ -25,8 +29,8 @@
       "type": "vmware-iso",
       "vm_name": "_centos-5.8-x86_64",
       "iso_checksum_type": "md5",
-      "iso_checksum": "6425035e9adee4b8653a85f59877ac5b",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/5.8/isos/x86_64/CentOS-5.8-x86_64-netinstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"

@@ -1,11 +1,15 @@
 {
+  "variables": {
+      "iso_checksum": "96de4f38a2f07da51831153549c8bd0c",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-NetInstall.iso"
+  },
   "builders": [
     {
       "type": "virtualbox-iso",
       "vm_name": "_centos-7.0.1406-x86_64",
       "iso_checksum_type": "md5",
-      "iso_checksum": "96de4f38a2f07da51831153549c8bd0c",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-NetInstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
@@ -25,8 +29,8 @@
       "type": "vmware-iso",
       "vm_name": "_centos-7.0.1406-x86_64",
       "iso_checksum_type": "md5",
-      "iso_checksum": "96de4f38a2f07da51831153549c8bd0c",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-NetInstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"

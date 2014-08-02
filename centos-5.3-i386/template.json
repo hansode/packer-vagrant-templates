@@ -1,11 +1,15 @@
 {
+  "variables": {
+      "iso_checksum": "6ae4077a9fc2dcedca96013701bd2a43",
+      "iso_url": "http://mirror.nsc.liu.se/centos-store/5.3/isos/i386/CentOS-5.3-i386-netinstall.iso"
+  },
   "builders": [
     {
       "type": "virtualbox-iso",
       "vm_name": "_centos-5.3-i386",
       "iso_checksum_type": "md5",
-      "iso_checksum": "6ae4077a9fc2dcedca96013701bd2a43",
-      "iso_url": "http://mirror.nsc.liu.se/centos-store/5.3/isos/i386/CentOS-5.3-i386-netinstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
@@ -25,8 +29,8 @@
       "type": "vmware-iso",
       "vm_name": "_centos-5.3-i386",
       "iso_checksum_type": "md5",
-      "iso_checksum": "6ae4077a9fc2dcedca96013701bd2a43",
-      "iso_url": "http://mirror.nsc.liu.se/centos-store/5.3/isos/i386/CentOS-5.3-i386-netinstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"

@@ -1,11 +1,15 @@
 {
+  "variables": {
+      "iso_checksum": "8930132831efa890bb2952adafde0475",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/6.2/isos/i386/CentOS-6.2-i386-netinstall.iso"
+  },
   "builders": [
     {
       "type": "virtualbox-iso",
       "vm_name": "_centos-6.2-i386",
       "iso_checksum_type": "md5",
-      "iso_checksum": "8930132831efa890bb2952adafde0475",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/6.2/isos/i386/CentOS-6.2-i386-netinstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
@@ -25,8 +29,8 @@
       "type": "vmware-iso",
       "vm_name": "_centos-6.2-i386",
       "iso_checksum_type": "md5",
-      "iso_checksum": "8930132831efa890bb2952adafde0475",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/6.2/isos/i386/CentOS-6.2-i386-netinstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
