@@ -1,12 +1,14 @@
 {
   "variables": {
+      "vm_name": "centos-5.4-i386",
+      "basearch": "i386",
       "iso_checksum": "34c9ccca520e7c049768b672c05644a4",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.4/isos/i386/CentOS-5.4-i386-netinstall.iso"
   },
   "builders": [
     {
       "type": "virtualbox-iso",
-      "vm_name": "_centos-5.4-i386",
+      "vm_name": "_{{ user `vm_name` }}",
       "iso_checksum_type": "md5",
       "iso_checksum": "{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
@@ -27,7 +29,7 @@
     },
     {
       "type": "vmware-iso",
-      "vm_name": "_centos-5.4-i386",
+      "vm_name": "_{{ user `vm_name` }}",
       "iso_checksum_type": "md5",
       "iso_checksum": "{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
@@ -82,7 +84,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "centos-5.4-i386.{{.Provider}}.box"
+      "output": "centos-{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
     }
   ]
 }

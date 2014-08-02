@@ -1,12 +1,14 @@
 {
   "variables": {
+      "vm_name": "centos-5.3-x86_64",
+      "basearch": "x86_64",
       "iso_checksum": "7dec88e4147d6d90785ca57501af807e",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.3/isos/x86_64/CentOS-5.3-x86_64-netinstall.iso"
   },
   "builders": [
     {
       "type": "virtualbox-iso",
-      "vm_name": "_centos-5.3-x86_64",
+      "vm_name": "_{{ user `vm_name` }}",
       "iso_checksum_type": "md5",
       "iso_checksum": "{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
@@ -27,7 +29,7 @@
     },
     {
       "type": "vmware-iso",
-      "vm_name": "_centos-5.3-x86_64",
+      "vm_name": "_{{ user `vm_name` }}",
       "iso_checksum_type": "md5",
       "iso_checksum": "{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
@@ -82,7 +84,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "centos-5.3-x86_64.{{.Provider}}.box"
+      "output": "centos-{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
     }
   ]
 }

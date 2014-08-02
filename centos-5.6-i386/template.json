@@ -1,12 +1,14 @@
 {
   "variables": {
+      "vm_name": "centos-5.6-i386",
+      "basearch": "i386",
       "iso_checksum": "a710105f7f9fe3516f08f6f8514ed2b0",
       "iso_url": "http://ftp.riken.jp/Linux/centos/5.6/isos/i386/CentOS-5.6-i386-netinstall.iso"
   },
   "builders": [
     {
       "type": "virtualbox-iso",
-      "vm_name": "_centos-5.6-i386",
+      "vm_name": "_{{ user `vm_name` }}",
       "iso_checksum_type": "md5",
       "iso_checksum": "{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
@@ -27,7 +29,7 @@
     },
     {
       "type": "vmware-iso",
-      "vm_name": "_centos-5.6-i386",
+      "vm_name": "_{{ user `vm_name` }}",
       "iso_checksum_type": "md5",
       "iso_checksum": "{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
@@ -82,7 +84,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "centos-5.6-i386.{{.Provider}}.box"
+      "output": "centos-{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
     }
   ]
 }
