@@ -1,11 +1,17 @@
 {
+  "variables": {
+      "vm_name": "centos-5.6-x86_64",
+      "basearch": "x86_64",
+      "iso_checksum": "02cf3a5e32aaa5eed27af775ad292beb",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/5.6/isos/x86_64/CentOS-5.6-x86_64-netinstall.iso"
+  },
   "builders": [
     {
       "type": "virtualbox-iso",
-      "vm_name": "_centos-5.6-x86_64",
+      "vm_name": "_{{ user `vm_name` }}",
       "iso_checksum_type": "md5",
-      "iso_checksum": "02cf3a5e32aaa5eed27af775ad292beb",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/5.6/isos/x86_64/CentOS-5.6-x86_64-netinstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
@@ -23,10 +29,10 @@
     },
     {
       "type": "vmware-iso",
-      "vm_name": "_centos-5.6-x86_64",
+      "vm_name": "_{{ user `vm_name` }}",
       "iso_checksum_type": "md5",
-      "iso_checksum": "02cf3a5e32aaa5eed27af775ad292beb",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/5.6/isos/x86_64/CentOS-5.6-x86_64-netinstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
@@ -78,14 +84,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "override": {
-        "virtualbox": {
-          "output": "centos-5.6-x86_64.virtualbox.box"
-        },
-        "vmware": {
-          "output": "centos-5.6-x86_64.vmware.box"
-        }
-      }
+      "output": "centos-{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
     }
   ]
 }

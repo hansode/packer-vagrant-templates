@@ -1,11 +1,17 @@
 {
+  "variables": {
+      "vm_name": "centos-5.8-i386",
+      "basearch": "i386",
+      "iso_checksum": "3812865e426b55fde9a9931990e4a16c",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/5.8/isos/i386/CentOS-5.8-i386-netinstall.iso"
+  },
   "builders": [
     {
       "type": "virtualbox-iso",
-      "vm_name": "_centos-5.8-i386",
+      "vm_name": "_{{ user `vm_name` }}",
       "iso_checksum_type": "md5",
-      "iso_checksum": "3812865e426b55fde9a9931990e4a16c",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/5.8/isos/i386/CentOS-5.8-i386-netinstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
@@ -23,10 +29,10 @@
     },
     {
       "type": "vmware-iso",
-      "vm_name": "_centos-5.8-i386",
+      "vm_name": "_{{ user `vm_name` }}",
       "iso_checksum_type": "md5",
-      "iso_checksum": "3812865e426b55fde9a9931990e4a16c",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/5.8/isos/i386/CentOS-5.8-i386-netinstall.iso",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
@@ -78,14 +84,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "override": {
-        "virtualbox": {
-          "output": "centos-5.8-i386.virtualbox.box"
-        },
-        "vmware": {
-          "output": "centos-5.8-i386.vmware.box"
-        }
-      }
+      "output": "centos-{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
     }
   ]
 }
