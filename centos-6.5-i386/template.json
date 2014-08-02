@@ -78,14 +78,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "override": {
-        "virtualbox": {
-          "output": "centos-6.5-i386.virtualbox.box"
-        },
-        "vmware": {
-          "output": "centos-6.5-i386.vmware.box"
-        }
-      }
+      "output": "centos-6.5-i386.{{.Provider}}.box"
     }
   ]
 }
