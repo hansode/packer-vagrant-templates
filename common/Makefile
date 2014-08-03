@@ -16,6 +16,7 @@ test-stamp: add up ssh-test remove destroy
 clean:
 	rm -f build-stamp
 	rm -f test-stamp
+	rm -f $(NAME).$(PROVIDER).box
 
 add:
 	time vagrant box add $(NAME) $(NAME).$(PROVIDER).box
