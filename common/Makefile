@@ -4,8 +4,11 @@ PROVIDER=virtualbox
 
 all:
 
-build: build-stamp
-build-stamp:
+build: $(NAME).$(PROVIDER).box
+
+$(NAME).$(PROVIDER).box: build-stamp
+
+build-stamp: template.json ks.cfg
 	time packer build -only=$(PROVIDER)-iso template.json
 	touch $@
 
