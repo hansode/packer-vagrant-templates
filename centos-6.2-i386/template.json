@@ -1,7 +1,6 @@
 {
   "variables": {
       "vm_name": "centos-6.2-i386",
-      "basearch": "i386",
       "iso_checksum": "8930132831efa890bb2952adafde0475",
       "iso_url": "http://ftp.riken.jp/Linux/centos/6.2/isos/i386/CentOS-6.2-i386-netinstall.iso"
   },
@@ -84,7 +83,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
+      "output": "{{ user `vm_name` }}.{{.Provider}}.box"
     }
   ]
 }

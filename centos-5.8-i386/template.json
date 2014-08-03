@@ -1,7 +1,6 @@
 {
   "variables": {
       "vm_name": "centos-5.8-i386",
-      "basearch": "i386",
       "iso_checksum": "3812865e426b55fde9a9931990e4a16c",
       "iso_url": "http://ftp.riken.jp/Linux/centos/5.8/isos/i386/CentOS-5.8-i386-netinstall.iso"
   },
@@ -84,7 +83,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
+      "output": "{{ user `vm_name` }}.{{.Provider}}.box"
     }
   ]
 }

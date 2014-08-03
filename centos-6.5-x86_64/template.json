@@ -1,7 +1,6 @@
 {
   "variables": {
       "vm_name": "centos-6.5-x86_64",
-      "basearch": "x86_64",
       "iso_checksum": "939fd1d87c11ffe7795324438b85adfb",
       "iso_url": "http://ftp.riken.jp/Linux/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-netinstall.iso"
   },
@@ -84,7 +83,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
+      "output": "{{ user `vm_name` }}.{{.Provider}}.box"
     }
   ]
 }

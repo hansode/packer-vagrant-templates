@@ -1,7 +1,6 @@
 {
   "variables": {
       "vm_name": "centos-5.3-i386",
-      "basearch": "i386",
       "iso_checksum": "6ae4077a9fc2dcedca96013701bd2a43",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.3/isos/i386/CentOS-5.3-i386-netinstall.iso"
   },
@@ -84,7 +83,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
+      "output": "{{ user `vm_name` }}.{{.Provider}}.box"
     }
   ]
 }
