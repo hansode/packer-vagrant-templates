@@ -1,7 +1,6 @@
 {
   "variables": {
       "vm_name": "centos-5.9-i386",
-      "basearch": "i386",
       "iso_checksum": "e1d6716199bc3ed713b699604a0b70e0",
       "iso_url": "http://ftp.riken.jp/Linux/centos/5.9/isos/i386/CentOS-5.9-i386-netinstall.iso"
   },

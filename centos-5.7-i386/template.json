@@ -1,7 +1,6 @@
 {
   "variables": {
       "vm_name": "centos-5.7-i386",
-      "basearch": "i386",
       "iso_checksum": "11222d9134cdfc101f6f91fe544254c9",
       "iso_url": "http://ftp.riken.jp/Linux/centos/5.7/isos/i386/CentOS-5.7-i386-netinstall.iso"
   },

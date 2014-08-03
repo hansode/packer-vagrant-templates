@@ -1,7 +1,6 @@
 {
   "variables": {
       "vm_name": "centos-5.5-i386",
-      "basearch": "i386",
       "iso_checksum": "0172883a3039772165db073693debae5",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.5/isos/i386/CentOS-5.5-i386-netinstall.iso"
   },

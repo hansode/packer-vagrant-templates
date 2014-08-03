@@ -1,7 +1,6 @@
 {
   "variables": {
       "vm_name": "centos-5.4-i386",
-      "basearch": "i386",
       "iso_checksum": "34c9ccca520e7c049768b672c05644a4",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/5.4/isos/i386/CentOS-5.4-i386-netinstall.iso"
   },

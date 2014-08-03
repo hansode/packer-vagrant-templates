@@ -1,7 +1,6 @@
 {
   "variables": {
       "vm_name": "centos-5.6-x86_64",
-      "basearch": "x86_64",
       "iso_checksum": "02cf3a5e32aaa5eed27af775ad292beb",
       "iso_url": "http://ftp.riken.jp/Linux/centos/5.6/isos/x86_64/CentOS-5.6-x86_64-netinstall.iso"
   },

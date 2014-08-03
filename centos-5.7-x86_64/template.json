@@ -1,7 +1,6 @@
 {
   "variables": {
       "vm_name": "centos-5.7-x86_64",
-      "basearch": "x86_64",
       "iso_checksum": "5db3d49ba7a2c56810822914fadc1edf",
       "iso_url": "http://ftp.riken.jp/Linux/centos/5.7/isos/x86_64/CentOS-5.7-x86_64-netinstall.iso"
   },
