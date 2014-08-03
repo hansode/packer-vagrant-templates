@@ -84,7 +84,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "centos-{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
+      "output": "{{ user `vm_name` }}-{{ user `basearch` }}.{{.Provider}}.box"
     }
   ]
 }
