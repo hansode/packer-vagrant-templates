@@ -17,8 +17,8 @@ Current Boxes
 Requirements
 ------------
 
-* Packer (>= 0.6.0)(http://www.packer.io/downloads.html)
-* Vagrant (>= 1.6.3)(http://downloads.vagrantup.com/)
+* Packer (>= 0.6.1)(http://www.packer.io/downloads.html)
+* Vagrant (>= 1.6.3)(http://www.vagrantup.com/downloads.html)
 * Platforms
   * Virtualbox (>= 4.3.14)(https://www.virtualbox.org/wiki/Downloads)
   * VMware Workstaion (>= 10)(https://www.vmware.com/go/downloadworkstation)
