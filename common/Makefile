@@ -2,7 +2,7 @@ SHELL=/bin/bash
 NAME=`basename \`pwd\``
 PROVIDER=virtualbox
 
-all:
+all: build
 
 build: $(NAME).$(PROVIDER).box
 

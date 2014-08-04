@@ -1,7 +1,7 @@
 SHELL=/bin/bash
 PROVIDER=virtualbox
 
-all:
+all: build
 
 build: build-32 build-64
 
