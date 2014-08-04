@@ -2,7 +2,7 @@ SHELL=/bin/bash
 NAME=`basename \`pwd\``
 PROVIDER=virtualbox
 
-all:
+all: build
 
 build: $(NAME).$(PROVIDER).box
 
@@ -13,7 +13,7 @@ build-stamp: template.json ks.cfg
 	touch $@
 
 test: test-stamp
-test-stamp: add up ssh-test remove destroy
+test-stamp: force-remove add up ssh-test remove destroy
 	touch $@
 
 clean:
@@ -24,6 +24,8 @@ clean:
 add:
 	time vagrant box add $(NAME) $(NAME).$(PROVIDER).box
 
+force-remove:
+	time vagrant box remove -f $(NAME) --provider $(PROVIDER) || :
 remove:
 	time vagrant box remove -f $(NAME) --provider $(PROVIDER)
 
