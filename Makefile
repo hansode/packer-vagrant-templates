@@ -3,7 +3,10 @@ PROVIDER=virtualbox
 
 all: build
 
-build: build-32 build-64
+setup:
+	(cd templates && make)
+
+build: setup build-32 build-64
 
 build-32:
 	for i in centos-*-i386;   do echo ... $${i}; (cd $${i} && make build PROVIDER=$(PROVIDER)); done
