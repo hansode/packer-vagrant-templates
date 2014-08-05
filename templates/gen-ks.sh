@@ -13,8 +13,18 @@ function gen_ks_cfg() {
   local ks_path=${target_dir}/ks.cfg
   [[ -d ${target_dir} ]] || return 0
 
-  echo ${ks_path}
-  sed "s,__releasever__,${releasever},; s,__basearch__,${basearch},;" ks.${releasever%%.*}.cfg > ${ks_path}
+  echo ... ${ks_path}
+  ks_tmp=$(render_ks_cfg releasever=${releasever} basearch=${basearch})
+
+  diff ${ks_path} <(echo "${ks_tmp}") && return 0
+
+  echo "${ks_tmp}" > ${ks_path}
+}
+
+function render_ks_cfg() {
+  eval "${@}"
+
+  sed "s,__releasever__,${releasever},; s,__basearch__,${basearch},;" ks.${releasever%%.*}.cfg
 }
 
 for releasever in 7.0.1406 6.{0..5} 5.{2..10}; do

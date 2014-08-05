@@ -8,5 +8,8 @@ set -o pipefail
 
 for i in ../centos-*/; do
   [[ -d ${i} ]] || continue
-  cp Vagrantfile ${i}/
+  echo ... ${i}
+  diff Vagrantfile ${i}/Vagrantfile && continue
+
+  rsync Vagrantfile ${i}/
 done
