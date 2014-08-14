@@ -9,10 +9,27 @@ Current Boxes
 64-bit boxes:
 
 + [hansode/centos-7.0.1406-x86_64](https://vagrantcloud.com/hansode/centos-7.0.1406-x86_64)
++ [hansode/centos-5.10-x86_64](https://vagrantcloud.com/hansode/centos-5.10-x86_64)
++ [hansode/centos-5.9-x86_64](https://vagrantcloud.com/hansode/centos-5.9-x86_64)
++ [hansode/centos-5.8-x86_64](https://vagrantcloud.com/hansode/centos-5.8-x86_64)
++ [hansode/centos-5.7-x86_64](https://vagrantcloud.com/hansode/centos-5.7-x86_64)
++ [hansode/centos-5.6-x86_64](https://vagrantcloud.com/hansode/centos-5.6-x86_64)
++ [hansode/centos-5.5-x86_64](https://vagrantcloud.com/hansode/centos-5.5-x86_64)
++ [hansode/centos-5.4-x86_64](https://vagrantcloud.com/hansode/centos-5.4-x86_64)
++ [hansode/centos-5.3-x86_64](https://vagrantcloud.com/hansode/centos-5.3-x86_64)
++ [hansode/centos-5.2-x86_64](https://vagrantcloud.com/hansode/centos-5.2-x86_64)
 
 32-bit boxes:
 
-+ ...
++ [hansode/centos-5.10-i386](https://vagrantcloud.com/hansode/centos-5.10-i386)
++ [hansode/centos-5.9-i386](https://vagrantcloud.com/hansode/centos-5.9-i386)
++ [hansode/centos-5.8-i386](https://vagrantcloud.com/hansode/centos-5.8-i386)
++ [hansode/centos-5.7-i386](https://vagrantcloud.com/hansode/centos-5.7-i386)
++ [hansode/centos-5.6-i386](https://vagrantcloud.com/hansode/centos-5.6-i386)
++ [hansode/centos-5.5-i386](https://vagrantcloud.com/hansode/centos-5.5-i386)
++ [hansode/centos-5.4-i386](https://vagrantcloud.com/hansode/centos-5.4-i386)
++ [hansode/centos-5.3-i386](https://vagrantcloud.com/hansode/centos-5.3-i386)
++ [hansode/centos-5.2-i386](https://vagrantcloud.com/hansode/centos-5.2-i386)
 
 Requirements
 ------------
