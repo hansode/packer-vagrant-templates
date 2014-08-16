@@ -22,7 +22,7 @@ clean:
 	rm -f $(NAME).$(PROVIDER).box
 
 add:
-	time vagrant box add $(NAME) $(NAME).$(PROVIDER).box
+	time vagrant box add --force $(NAME) $(NAME).$(PROVIDER).box
 
 force-remove:
 	time vagrant box remove -f $(NAME) --provider $(PROVIDER) || :
