@@ -2,7 +2,7 @@
   "variables": {
       "vm_name": "centos-6.1-i386",
       "iso_checksum": "2267b7fb6f1f9a2c735f69f13d0f5bc9",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/6.1/isos/i386/CentOS-6.1-i386-netinstall.iso"
+      "iso_url": "http://mirror.nsc.liu.se/centos-store/6.1/isos/i386/CentOS-6.1-i386-netinstall.iso"
   },
   "builders": [
     {
