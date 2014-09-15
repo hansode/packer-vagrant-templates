@@ -2,7 +2,7 @@
   "variables": {
       "vm_name": "centos-5.9-x86_64",
       "iso_checksum": "445cfe6236327450bcbda17319b73559",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/5.9/isos/x86_64/CentOS-5.9-x86_64-netinstall.iso"
+      "iso_url": "http://mirror.nsc.liu.se/centos-store/5.9/isos/x86_64/CentOS-5.9-x86_64-netinstall.iso"
   },
   "builders": [
     {
