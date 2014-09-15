@@ -12,7 +12,13 @@ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.saved
 releasever=$(< /etc/yum/vars/releasever)
 majorver=${releasever%%.*}
 
-baseurl=http://ftp.riken.jp/Linux/centos
+baseurl=http://vault.centos.org
+case "${releasever}" in
+  # latest version
+  5.10 | 6.5 | 7.0.1406 )
+    baseurl=http://ftp.riken.jp/Linux/centos
+    ;;
+esac
 
 cat <<-REPO > /etc/yum.repos.d/CentOS-Base.repo
 	[base]
