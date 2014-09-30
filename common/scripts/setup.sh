@@ -15,8 +15,8 @@ majorver=${releasever%%.*}
 baseurl=http://vault.centos.org
 case "${releasever}" in
   # latest version
-  5.10 | 6.5 | 7.0.1406 )
-    baseurl=http://ftp.riken.jp/Linux/centos
+  5.11 | 6.5 | 7.0.1406 )
+    baseurl=http://ftp.jaist.ac.jp/pub/Linux/CentOS
     ;;
 esac
 
