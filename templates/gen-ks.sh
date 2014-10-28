@@ -27,7 +27,7 @@ function render_ks_cfg() {
   sed "s,__releasever__,${releasever},; s,__basearch__,${basearch},;" ks.${releasever%%.*}.cfg
 }
 
-for releasever in 7.0.1406 6.{0..5} 5.{2..11}; do
+for releasever in 7.0.1406 6.{0..6} 5.{2..11}; do
   for basearch in x86_64 i386; do
     gen_ks_cfg releasever=${releasever} basearch=${basearch}
   done
