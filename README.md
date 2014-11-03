@@ -1,7 +1,7 @@
 Packer Vagrant Templates
 ========================
 
-This repository contains templates for CentOS that can create Vagrant base boxes using Packer.
+This repository contains templates for CentOS/Fedora that can create Vagrant base boxes using Packer.
 
 Current Boxes
 -------------
@@ -26,6 +26,7 @@ Current Boxes
 + [hansode/centos-5.4-x86_64](https://vagrantcloud.com/hansode/centos-5.4-x86_64)
 + [hansode/centos-5.3-x86_64](https://vagrantcloud.com/hansode/centos-5.3-x86_64)
 + [hansode/centos-5.2-x86_64](https://vagrantcloud.com/hansode/centos-5.2-x86_64)
++ [hansode/fedora-20-x86_64](https://vagrantcloud.com/hansode/boxes/fedora-20-x86_64)
 
 32-bit boxes:
 
