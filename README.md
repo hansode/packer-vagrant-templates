@@ -47,6 +47,7 @@ Current Boxes
 + [hansode/centos-5.4-i386](https://vagrantcloud.com/hansode/centos-5.4-i386)
 + [hansode/centos-5.3-i386](https://vagrantcloud.com/hansode/centos-5.3-i386)
 + [hansode/centos-5.2-i386](https://vagrantcloud.com/hansode/centos-5.2-i386)
++ [hansode/fedora-20-i386](https://vagrantcloud.com/hansode/boxes/fedora-20-i386)
 
 Requirements
 ------------

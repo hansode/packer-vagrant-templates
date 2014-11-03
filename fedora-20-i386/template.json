@@ -1,0 +1,87 @@
+{
+  "variables": {
+      "vm_name": "fedora-20-i386",
+      "iso_checksum": "bfdd44022ebddf7355764893324111dd",
+      "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/Fedora/releases/20/Fedora/i386/iso/Fedora-20-i386-netinst.iso"
+  },
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "vm_name": "_{{ user `vm_name` }}",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
+      "http_directory": ".",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
+      ],
+      "headless": "false",
+      "guest_os_type": "RedHat_64",
+      "vboxmanage": [
+        [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
+        [ "modifyvm", "{{.Name}}", "--cpus",   "1"    ]
+      ],
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "50000s",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p"
+    },
+    {
+      "type": "vmware-iso",
+      "vm_name": "_{{ user `vm_name` }}",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
+      "http_directory": ".",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
+      ],
+      "headless": "false",
+      "guest_os_type": "rhel7-64",
+      "vmx_data": {
+        "memsize": "1024",
+        "numvcpus":   "1",
+        "vhv.enable": "TRUE"
+      },
+      "vmdk_name": "box-disk1",
+      "disk_type_id": "0",
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "50000s",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "override": {
+        "virtualbox-iso": {
+          "scripts": [
+            "../common/scripts/setup-fedora.sh",
+            "../common/scripts/bootstrap.sh",
+            "../common/scripts/sshd_config.sh",
+            "../common/scripts/vagrant.guest.account.sh",
+            "../common/scripts/virtualbox.guest.additions.sh",
+            "../common/scripts/teardown.sh"
+          ]
+        },
+        "vmware-iso": {
+          "scripts": [
+            "../common/scripts/setup-fedora.sh",
+            "../common/scripts/bootstrap.sh",
+            "../common/scripts/sshd_config.sh",
+            "../common/scripts/vagrant.guest.account.sh",
+            "../common/scripts/teardown.sh"
+          ]
+        }
+      }
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "output": "{{ user `vm_name` }}.{{.Provider}}.box"
+    }
+  ]
+}
