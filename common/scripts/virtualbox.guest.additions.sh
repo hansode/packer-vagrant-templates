@@ -12,7 +12,7 @@ set -x
 }
 
 if [[ -n "$(rpm -E %fedora)" ]]; then
-  yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+  yum localinstall --nogpgcheck -y http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
   yum install --disablerepo=updates --disablerepo=rpmfusion-free-updates -y VirtualBox-guest
 else
   iso_path=/home/vagrant/VBoxGuestAdditions.iso
