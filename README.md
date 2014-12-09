@@ -27,6 +27,7 @@ Current Boxes
 + [hansode/centos-5.3-x86_64](https://vagrantcloud.com/hansode/centos-5.3-x86_64)
 + [hansode/centos-5.2-x86_64](https://vagrantcloud.com/hansode/centos-5.2-x86_64)
 + [hansode/fedora-20-x86_64](https://vagrantcloud.com/hansode/boxes/fedora-20-x86_64)
++ [hansode/fedora-21-server-x86_64](https://vagrantcloud.com/hansode/boxes/fedora-21-server-x86_64)
 
 32-bit boxes:
 
@@ -48,6 +49,7 @@ Current Boxes
 + [hansode/centos-5.3-i386](https://vagrantcloud.com/hansode/centos-5.3-i386)
 + [hansode/centos-5.2-i386](https://vagrantcloud.com/hansode/centos-5.2-i386)
 + [hansode/fedora-20-i386](https://vagrantcloud.com/hansode/boxes/fedora-20-i386)
++ [hansode/fedora-21-server-i386](https://vagrantcloud.com/hansode/boxes/fedora-21-server-i386)
 
 Requirements
 ------------
@@ -55,7 +57,7 @@ Requirements
 * Packer (>= 0.7.2)(http://www.packer.io/downloads.html)
 * Vagrant (>= 1.6.5)(http://www.vagrantup.com/downloads.html)
 * Platforms
-  * Virtualbox (>= 4.3.18)(https://www.virtualbox.org/wiki/Downloads)
+  * Virtualbox (>= 4.3.20)(https://www.virtualbox.org/wiki/Downloads)
   * VMware Workstaion (>= 10)(https://www.vmware.com/go/downloadworkstation)
 * Vagrant VMware plugin if you're using vmware (http://www.vagrantup.com/vmware)
 
