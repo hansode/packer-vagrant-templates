@@ -26,8 +26,8 @@ Current Boxes
 + [hansode/centos-5.4-x86_64](https://vagrantcloud.com/hansode/centos-5.4-x86_64)
 + [hansode/centos-5.3-x86_64](https://vagrantcloud.com/hansode/centos-5.3-x86_64)
 + [hansode/centos-5.2-x86_64](https://vagrantcloud.com/hansode/centos-5.2-x86_64)
-+ [hansode/fedora-20-x86_64](https://vagrantcloud.com/hansode/boxes/fedora-20-x86_64)
 + [hansode/fedora-21-server-x86_64](https://vagrantcloud.com/hansode/boxes/fedora-21-server-x86_64)
++ [hansode/fedora-20-x86_64](https://vagrantcloud.com/hansode/boxes/fedora-20-x86_64)
 
 32-bit boxes:
 
@@ -48,8 +48,8 @@ Current Boxes
 + [hansode/centos-5.4-i386](https://vagrantcloud.com/hansode/centos-5.4-i386)
 + [hansode/centos-5.3-i386](https://vagrantcloud.com/hansode/centos-5.3-i386)
 + [hansode/centos-5.2-i386](https://vagrantcloud.com/hansode/centos-5.2-i386)
-+ [hansode/fedora-20-i386](https://vagrantcloud.com/hansode/boxes/fedora-20-i386)
 + [hansode/fedora-21-server-i386](https://vagrantcloud.com/hansode/boxes/fedora-21-server-i386)
++ [hansode/fedora-20-i386](https://vagrantcloud.com/hansode/boxes/fedora-20-i386)
 
 Requirements
 ------------
