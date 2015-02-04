@@ -61,6 +61,7 @@
           "scripts": [
             "../common/scripts/setup.sh",
             "../common/scripts/bootstrap.sh",
+            "../common/scripts/disable-selinux.sh",
             "../common/scripts/sshd_config.sh",
             "../common/scripts/vagrant.guest.account.sh",
             "../common/scripts/virtualbox.guest.additions.sh",
@@ -71,6 +72,7 @@
           "scripts": [
             "../common/scripts/setup.sh",
             "../common/scripts/bootstrap.sh",
+            "../common/scripts/disable-selinux.sh",
             "../common/scripts/sshd_config.sh",
             "../common/scripts/vagrant.guest.account.sh",
             "../common/scripts/vmware-tools.sh",
