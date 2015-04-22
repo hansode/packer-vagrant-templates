@@ -15,7 +15,7 @@
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
       ],
-      "headless": "false",
+      "headless": "true",
       "guest_os_type": "RedHat",
       "vboxmanage": [
         [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
@@ -36,7 +36,7 @@
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
       ],
-      "headless": "false",
+      "headless": "true",
       "guest_os_type": "rhel6-64",
       "vmx_data": {
         "memsize": "1024",
