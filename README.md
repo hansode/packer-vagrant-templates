@@ -97,10 +97,10 @@ Minimal + Guest Additions + Debugging/Development tools
 Requirements
 ------------
 
-* Packer (>= 0.7.2)(http://www.packer.io/downloads.html)
-* Vagrant (>= 1.6.5)(http://www.vagrantup.com/downloads.html)
+* Packer (>= 0.7.5)(http://www.packer.io/downloads.html)
+* Vagrant (>= 1.7.1)(http://www.vagrantup.com/downloads.html)
 * Platforms
-  * Virtualbox (>= 4.3.20)(https://www.virtualbox.org/wiki/Downloads)
+  * Virtualbox (>= 4.3.26)(https://www.virtualbox.org/wiki/Downloads)
   * VMware Workstaion (>= 10)(https://www.vmware.com/go/downloadworkstation)
 * Vagrant VMware plugin if you're using vmware (http://www.vagrantup.com/vmware)
 
