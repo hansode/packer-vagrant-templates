@@ -52,13 +52,55 @@ Current Boxes
 + [hansode/fedora-21-server-i386](https://vagrantcloud.com/hansode/boxes/fedora-21-server-i386)
 + [hansode/fedora-20-i386](https://vagrantcloud.com/hansode/boxes/fedora-20-i386)
 
+Installed Packages
+------------------
+
+Minimal + Guest Additions + Debugging/Development tools
+
++ openssh
++ openssh-clients
++ openssh-server
++ rpm
++ yum
++ curl
++ dhclient
++ passwd
++ vim-minimal
++ sudo
++ kernel-devel
++ gcc
++ perl
++ bzip2
++ ntp
++ ntpdate
++ man
++ rsync
++ git
++ make
++ vim-minimal
++ screen
++ nmap
++ lsof
++ strace
++ tcpdump
++ traceroute
++ telnet
++ ltrace
++ bind-utils
++ sysstat
++ nc
++ wireshark
++ zip
++ nfs-utils
++ acpid
+
 Requirements
 ------------
 
-* Packer (>= 0.7.2)(http://www.packer.io/downloads.html)
-* Vagrant (>= 1.6.5)(http://www.vagrantup.com/downloads.html)
+* Packer (>= 0.7.5)(http://www.packer.io/downloads.html)
+* Vagrant (>= 1.7.1)(http://www.vagrantup.com/downloads.html)
 * Platforms
-  * Virtualbox (>= 4.3.20)(https://www.virtualbox.org/wiki/Downloads)
+  * Virtualbox (>= 4.3.26)(https://www.virtualbox.org/wiki/Downloads)
   * VMware Workstaion (>= 10)(https://www.vmware.com/go/downloadworkstation)
 * Vagrant VMware plugin if you're using vmware (http://www.vagrantup.com/vmware)
 
