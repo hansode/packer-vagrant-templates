@@ -1,8 +1,8 @@
 {
   "variables": {
       "vm_name": "centos-7.1.1503-x86_64",
-      "iso_checksum": "21bb5acf5517806e49c81e7dedefcd3f",
-      "iso_url": "http://ftp.riken.jp/Linux/centos/7.1.1503/isos/x86_64/CentOS-7-x86_64-Minimal-1503.iso"
+      "iso_checksum": "d07ab3e615c66a8b2e9a50f4852e6a77",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/7.1.1503/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso"
   },
   "builders": [
     {
