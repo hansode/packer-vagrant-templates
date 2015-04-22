@@ -52,6 +52,48 @@ Current Boxes
 + [hansode/fedora-21-server-i386](https://vagrantcloud.com/hansode/boxes/fedora-21-server-i386)
 + [hansode/fedora-20-i386](https://vagrantcloud.com/hansode/boxes/fedora-20-i386)
 
+Installed Packages
+------------------
+
+Minimal + Guest Additions + Debugging/Development tools
+
++ openssh
++ openssh-clients
++ openssh-server
++ rpm
++ yum
++ curl
++ dhclient
++ passwd
++ vim-minimal
++ sudo
++ kernel-devel
++ gcc
++ perl
++ bzip2
++ ntp
++ ntpdate
++ man
++ rsync
++ git
++ make
++ vim-minimal
++ screen
++ nmap
++ lsof
++ strace
++ tcpdump
++ traceroute
++ telnet
++ ltrace
++ bind-utils
++ sysstat
++ nc
++ wireshark
++ zip
++ nfs-utils
++ acpid
+
 Requirements
 ------------
 
