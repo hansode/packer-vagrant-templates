@@ -26,7 +26,7 @@ case "$(rpm -E %fedora)" in
     umount ${mnt_path}
     ;;
   [0-9]*) # maybe fedora
-    yum localinstall --nogpgcheck -y http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    yum install --nogpgcheck -y http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
     yum install --disablerepo=updates --disablerepo=rpmfusion-free-updates -y VirtualBox-guest
     yum remove -y rpmfusion-free-release-$(rpm -E %fedora)
     ;;
