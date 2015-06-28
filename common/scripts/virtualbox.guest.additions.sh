@@ -7,6 +7,10 @@ set -e
 set -o pipefail
 set -x
 
+function yum() {
+  $(type -P dnf 2>&1 || type -P yum) "${@}"
+}
+
 {
   yum install --disablerepo=updates -y make kernel-devel gcc perl bzip2
   iso_path=/home/vagrant/VBoxGuestAdditions.iso

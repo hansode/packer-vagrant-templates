@@ -8,7 +8,7 @@ set -o pipefail
 set -x
 
 function yum() {
-  $(type -P yum) --disablerepo=updates "${@}"
+  $(type -P dnf 2>&1 || type -P yum) --disablerepo=updates "${@}"
 }
 
 # Add installation packages ...
