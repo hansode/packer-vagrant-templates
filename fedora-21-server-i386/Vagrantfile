@@ -15,6 +15,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :vmware_workstation do |v, override|
    #override.vm.synced_folder ".", "/vagrant", disabled: true
    #v.gui = true
-    v.vmx["vhv.enable"] = "TRUE"
   end
 end
