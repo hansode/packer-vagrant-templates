@@ -1,0 +1,90 @@
+{
+  "variables": {
+      "vm_name": "centos-6.7-i386",
+      "iso_checksum": "ec1f887d9097ac704bb8d5624cda13af",
+      "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.7/isos/i386/CentOS-6.7-i386-netinstall.iso"
+  },
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "vm_name": "_{{ user `vm_name` }}",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
+      "http_directory": ".",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
+      ],
+      "headless": "true",
+      "guest_os_type": "RedHat",
+      "vboxmanage": [
+        [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
+        [ "modifyvm", "{{.Name}}", "--cpus",   "1"    ]
+      ],
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "50000s",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p"
+    },
+    {
+      "type": "vmware-iso",
+      "vm_name": "_{{ user `vm_name` }}",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_url": "{{ user `iso_url` }}",
+      "http_directory": ".",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
+      ],
+      "headless": "true",
+      "guest_os_type": "rhel6-64",
+      "vmx_data": {
+        "memsize": "1024",
+        "numvcpus":   "1"
+      },
+      "tools_upload_flavor": "linux",
+      "vmdk_name": "box-disk1",
+      "disk_type_id": "0",
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "50000s",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "override": {
+        "virtualbox-iso": {
+          "scripts": [
+            "../common/scripts/setup.sh",
+            "../common/scripts/bootstrap.sh",
+            "../common/scripts/disable-selinux.sh",
+            "../common/scripts/sshd_config.sh",
+            "../common/scripts/vagrant.guest.account.sh",
+            "../common/scripts/virtualbox.guest.additions.sh",
+            "../common/scripts/teardown.sh"
+          ]
+        },
+        "vmware-iso": {
+          "scripts": [
+            "../common/scripts/setup.sh",
+            "../common/scripts/bootstrap.sh",
+            "../common/scripts/disable-selinux.sh",
+            "../common/scripts/sshd_config.sh",
+            "../common/scripts/vagrant.guest.account.sh",
+            "../common/scripts/vmware-tools.sh",
+            "../common/scripts/teardown.sh"
+          ]
+        }
+      }
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "output": "{{ user `vm_name` }}.{{.Provider}}.box"
+    }
+  ]
+}
