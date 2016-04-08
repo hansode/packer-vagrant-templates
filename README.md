@@ -8,6 +8,7 @@ Current Boxes
 
 64-bit boxes:
 
++ [deepakprabhakara/centos-7](https://vagrantcloud.com/deepakprabhakara/centos-7)
 + [hansode/centos-7.1.1503-x86_64](https://vagrantcloud.com/hansode/centos-7.1.1503-x86_64)
 + [hansode/centos-7.0.1406-x86_64](https://vagrantcloud.com/hansode/centos-7.0.1406-x86_64)
 + [hansode/centos-6.6-x86_64](https://vagrantcloud.com/hansode/centos-6.6-x86_64)
