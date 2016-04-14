@@ -1,8 +1,8 @@
 {
   "variables": {
-      "vm_name": "centos-7.1.1503-x86_64",
-      "iso_checksum": "d07ab3e615c66a8b2e9a50f4852e6a77",
-      "iso_url": "http://mirror.nsc.liu.se/centos-store/7.1.1503/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso"
+      "vm_name": "centos-7.2.1511-x86_64",
+      "iso_checksum": "88c0437f0a14c6e2c94426df9d43cd67",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/7.2.1511/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso"
   },
   "builders": [
     {
@@ -84,5 +84,5 @@
       "type": "vagrant",
       "output": "{{ user `vm_name` }}.{{.Provider}}.box"
     }
-  ]
+]
 }
